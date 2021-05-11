@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - id: scan
-      uses: jimseiwert/sonarqube-scanner
+      uses: ./
       with:
         host-url: ${{ secrets.SONARQUBE_URL }}
         token: ${{ secrets.SONARQUBE_TOKEN }}
