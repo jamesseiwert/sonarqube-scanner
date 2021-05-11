@@ -1,4 +1,4 @@
-name: 'SonarQube Scanner Action'
+name: 'SonarQube Scan Action'
 author: 'Jim Seiwert'
 description: 'Scans your code using the sonarqube batch file'
 branding:
