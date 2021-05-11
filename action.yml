@@ -1,5 +1,7 @@
-name: 'Hello World'
-description: 'Greet someone'
+name: 'SonarQube Scanner Action'
+description: 'Scans your code using the sonarqube batch file'
+icon: 'activity'
+color: 'blue'
 inputs:
   who-to-greet:  # id of input
     description: 'Who to greet'
