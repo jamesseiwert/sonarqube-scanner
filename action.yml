@@ -27,11 +27,5 @@ runs:
       shell: bash
 
     - name: scan code
-      if: ${{ runner.os == 'Linux' }}
-      run: ${{ github.action_path }}/${{ runner.os }}/bin/sonar-scanner.sh  --define sonar.host.url=${{ inputs.host-url }} --define sonar.login=${{ inputs.token }} --define sonar.projectKey=${{  inputs.project-key }} --define sonar.projectName="${{ inputs.project-name }}"
-      shell: bash
-
-    - name: scan code
-      if: ${{ runner.os == 'Windows' }}
       run: ${{ github.action_path }}/${{ runner.os }}/bin/sonar-scanner.bat --define sonar.host.url=${{ inputs.host-url }} --define sonar.login=${{ inputs.token }} --define sonar.projectKey=${{  inputs.project-key }} --define sonar.projectName="${{ inputs.project-name }}"
       shell: pwsh
