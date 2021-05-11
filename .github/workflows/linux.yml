@@ -3,7 +3,7 @@ on: [push]
 env:
   SONARQUBE_PROJECT_KEY: ${{ github.event.repository.owner.login }}:${{ github.event.repository.name }}
   SONARQUBE_PROJECT_NAME: ${{ github.event.repository.owner.login }}:${{ github.event.repository.name }}
-  
+
 jobs:
   scan_job:
     runs-on: ubuntu-latest
@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - id: scan
-      uses: jimseiwert/sonarqube-scanner@v0.2-alpha
+      uses: jimseiwert/sonarqube-scanner
       with:
         host-url: 'http://www.google.com'
         token: foo
