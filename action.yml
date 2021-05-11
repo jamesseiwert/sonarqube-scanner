@@ -1,7 +1,9 @@
 name: 'SonarQube Scanner Action'
+author: 'Jim Seiwert'
 description: 'Scans your code using the sonarqube batch file'
-icon: 'activity'
-color: 'blue'
+branding:
+  icon: 'activity'
+  color: 'blue'
 inputs:
   who-to-greet:  # id of input
     description: 'Who to greet'
