@@ -27,5 +27,7 @@ runs:
       shell: bash
 
     - name: scan code
-      run: ${{ github.action_path }}\\windows\\bin\\sonar-scanner.bat --define sonar.host.url=${{ inputs.host-url }} --define sonar.login=${{ inputs.token }} --define sonar.projectKey=${{  inputs.project-key }} --define sonar.projectName="${{ inputs.project-name }}"
+      run: |
+        $sonarPath = Join-Path -Path "${{ github.action_path }}" -ChildPath "windows\\bin\\sonar-scanner.bat"
+        Start-Process $sonarPath --define sonar.host.url=${{ inputs.host-url }} --define sonar.login=${{ inputs.token }} --define sonar.projectKey=${{  inputs.project-key }} --define sonar.projectName="${{ inputs.project-name }}"
       shell: pwsh
