@@ -7,13 +7,13 @@ env:
 jobs:
   hello_world_job:
     runs-on: windows-latest
-    name: A job to say hello
+    name: Windows job runner
     steps:
     - uses: actions/checkout@v2
     - id: scan
-      uses: jimseiwert/sonarqube-scanner@v0.1-alpha
+      uses: jimseiwert/sonarqube-scanner@v0.2-alpha
       with:
         host-url: ${{ secrets.SONARQUBE_URL }}
-        login: ${{ secrets.SONARQUBE_TOKEN }}
+        token: ${{ secrets.SONARQUBE_TOKEN }}
         project-key: ${{ env.SONARQUBE_PROJECT_KEY }}
         project-name: ${{ env.SONARQUBE_PROJECT_NAME }}

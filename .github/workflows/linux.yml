@@ -1,14 +1,19 @@
 on: [push]
 
+env:
+  SONARQUBE_PROJECT_KEY: ${{ github.event.repository.owner.login }}:${{ github.event.repository.name }}
+  SONARQUBE_PROJECT_NAME: ${{ github.event.repository.owner.login }}:${{ github.event.repository.name }}
+  
 jobs:
-  hello_world_job:
+  scan_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Linux job runner
     steps:
     - uses: actions/checkout@v2
-    - id: foo
-      uses: jimseiwert/sonarqube-scanner@v0.1-alpha
+    - id: scan
+      uses: jimseiwert/sonarqube-scanner@v0.2-alpha
       with:
-        who-to-greet: 'Mona the Octocat'
-    - run: echo random-number ${{ steps.foo.outputs.random-number }}
-      shell: bash
+        host-url: 'http://www.google.com'
+        token: foo
+        project-key: sample:test
+        project-name: test project
